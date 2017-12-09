@@ -1,0 +1,82 @@
+.container-fluid{
+  background-color: #ffd480;
+}
+.containerr{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eeccff;
+  position:absolute;
+  overflow: hidden;
+}
+.message-content{
+
+}
+.navbar-default{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.new-message{
+  margin-top: 20px;
+  margin-left: 15%;
+  width: 100%;
+  float: none;
+  /*margin-right: 15%;*/
+}
+.content{
+  background-color: #f7e6ff;
+  height: 80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  overflow:auto ;
+}
+.form-group
+{
+  width: 50%;
+  float: left;
+}
+.send_msg{
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.status{
+  height: 0px;
+  width: 0px;
+  float: none;
+}
+.message{
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+  width: 45%;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+}
+.message_you{
+  background-color: #4dffff;
+  border: 2px solid #4dffff;
+  margin-left: 53%;
+
+}
+.message_other{
+  background-color: #ff3385;
+  border: 2px solid #ff3385;
+}
+#new_user{
+  margin-left: 43%;
+  font-family:   cursive;
+  color: #9900ff;
+}
+
+
+#background-popup {z-index:85; position: fixed; display:none; height:100%; width:100%; background:#000; top:0px; left:0px;}
+#to-popup{background: #ffd480; color: #333333; display: none; width: 15%; height: 70%; overflow: auto;
+    position: fixed; top: 12%; z-index: 90; right: 0%; top:12% padding: 15px;}
+#btn-close{transition:0.2s; display: block; width: 40px; height: 40px; position: absolute; top: 0; right: 0; cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);}
+#btn-close:before{content: ""; display: block; position: absolute; top: 30%; left: 30%; width: 40%; height: 40%;
+    border-radius: 50%; background: #1A91B1; }
+#btn-close:hover{background: rgba(235, 95, 96, 0.2);}
+#popup-content{margin-top: 25%;}
