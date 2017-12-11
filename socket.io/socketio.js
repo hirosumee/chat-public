@@ -14,6 +14,7 @@ function allocate_name(ip)
     }
   });
   // var tmp='bánh bao'+(list_user.length==0?'':list_user.length);
+  //..
   var tmp={name:name,ip:ip.toString()};
   list_user.push(tmp);
   return list_user.indexOf(tmp);
