@@ -4,16 +4,15 @@ var change_name=false;
 socket.on('allocate name',function(name){
   if(name!='')
   {
-    console.log(name);
     yourname=name;
+    document.cookie = 'name='+name;
   }
   else {
       document.getElementById('message').insertAdjacentHTML('beforeend','<div id="new_user"><span>'+'  Tên đã tồn tại'+'</span></div>');
   }
-})
+});
 function send_msg_enter(event)
 {
-  console.log(event.keyCode)
   if(event.which == 13 || event.keyCode == 13)
   {
     send_msg();

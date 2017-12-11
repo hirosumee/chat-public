@@ -13,7 +13,6 @@
     });
     $("#background-popup").click(function() {
         disablePopup();  // function close pop up
-        disableLoginPopup();
     });
     var popupStatus = 0; // set value
     function loadPopup() {
@@ -34,10 +33,38 @@
     }
     function loadListUser(data)
     {
+      if(document.getElementById('to-popup').classList.contains('centerscreen'))
+      {
+        document.getElementById('to-popup').classList.remove('centerscreen');
+      }
+      if(!document.getElementById('to-popup').classList.contains('rightscreen'))
+      {
+        document.getElementById('to-popup').classList.add('rightscreen');
+      }
+      document.getElementById('popup-content').classList.add('rightscreen-content');
         document.getElementById('popup-content').innerHTML='';
       data.forEach(elem => {
         document.getElementById('popup-content').insertAdjacentHTML('beforeend','<div id="new_user"><a>'+elem+'</a></div>');
         loadPopup();
       });
+    }
+    function OnLoad()
+    {
+      if(document.getElementById('to-popup').classList.contains('rightscreen'))
+      {
+        document.getElementById('to-popup').classList.remove('rightscreen');
+        document.getElementById('to-popup').classList.add('centerscreen');
+      }
+    //  document.getElementById('popup-content').innerHTML='';
+      loadPopup();
+    }
+    function setname()
+    {
+      socket.emit('change name',$('.nameset').val());
+      disablePopup();
+    }
+    function loadroom()
+    {
+
     }
 // });

@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/index.css" />
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat|VT323|Rancho" rel="stylesheet">
+<link rel="shortcut icon" href="/favicon.ico" />
 </head>
-<body>
+<body onload="OnLoad()" style="font-family:VT323; font-size:20px;">
   <div class="containerr">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -26,7 +27,7 @@
                         <li class="active" role="presentation"><a href="#">Cộng đồng </a></li>
                         <!-- <li role="presentation"><a href="#">Cộng đồng </a></li> -->
                         <li role="presentation"><a href="#">Riêng </a></li>
-                        <li role="presentation"><a href="#" >Room List</a></li>
+                        <li role="presentation"><a href="#" onclick="loadroom()" >Room List</a></li>
                         <li role="presentation"><a href="#" id="count_user" onclick="LoadUser()">0 User Online</a></li>
                     </ul>
                 </div>
@@ -50,14 +51,18 @@
             </form>
         </div>
 
-        <div id="to-popup">
+        <div id="to-popup" class='centerscreen'>
         <span id="btn-close"></span>
         <div id="popup-content">
-
+          <div id="test">
+            <span id="labelten" style="margin-left:48%;">Nhập tên:</span>
+              <input  class="form-control input-lg nameset"  type="text" style="width:-webkit-fill-available;margin-left:10px;margin-right:10px;" />
+              <button type="button" style="margin-left:48%;" class="btn btn-warning send_msg" class="new_user" onclick="setname()">Vào chat</button>
+          </div>
         </div><!--end #popup-content-->
     </div> <!--to-popup end-->
     <div id="background-popup"></div>
-
+      
   </div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
