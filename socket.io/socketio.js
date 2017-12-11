@@ -4,10 +4,10 @@ var list_user=[];
 var express=require('express');
 function allocate_name(ip)
 {
-  var name=ip.toString();
+  var name=ip;
   list_user.forEach(elem => {
     // body...
-    if(ip.toString()==elem.name)
+    if(name==elem.name)
     {
       name= 'bánh bao '+list_user.length;
       return;
@@ -15,7 +15,7 @@ function allocate_name(ip)
   });
   // var tmp='bánh bao'+(list_user.length==0?'':list_user.length);
   //..
-  var tmp={name:name,ip:ip.toString()};
+  var tmp={name:name,ip:ip};
   list_user.push(tmp);
   return list_user.indexOf(tmp);
 }

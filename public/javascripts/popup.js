@@ -41,7 +41,10 @@
       {
         document.getElementById('to-popup').classList.add('rightscreen');
       }
-      document.getElementById('popup-content').classList.add('rightscreen-content');
+      if(!document.getElementById('popup-content').classList.contains('rightscreen-content'))
+      {
+        document.getElementById('popup-content').classList.add('rightscreen-content');
+      }
         document.getElementById('popup-content').innerHTML='';
       data.forEach(elem => {
         document.getElementById('popup-content').insertAdjacentHTML('beforeend','<div id="new_user"><a>'+elem+'</a></div>');

@@ -72,7 +72,7 @@
 .centerscreen
 {
   width: 40%;
-  height: 20%;
+  height: 30%;
   right: 30%;
   top: 30%;
 }
@@ -81,7 +81,7 @@
    width: 15%;
     height: 70%;
     right: 0%;
-     top: 12%;
+    top: 12%;
 }
 .rightscreen-content{
   height: 96%;margin-left: 5px;margin-right: 5px;margin-top: 15%;
@@ -90,7 +90,7 @@
   font-family: VT323;
 }
 #background-popup {z-index:85; position: fixed; display:none; height:100%; width:100%; background:#000; top:0px; left:0px;}
-#to-popup{background: #ffd480; color: #333333; display: none; overflow: auto;
+#to-popup{background: #ffd480; color: #333333; display: none; overflow: overlay;
     position: fixed; z-index: 90;  top:12% padding: 15px;}
 #btn-close{transition:0.2s; display: block; width: 40px; height: 40px; position: absolute; top: 0; right: 0; cursor: pointer;
     /*background: rgba(255, 255, 255, 0.8);*/
