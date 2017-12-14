@@ -5,7 +5,7 @@ var express=require('express');
 var message=require('../models/message');
 function allocate_name(ip)
 {
-  var name=ip;
+  var name='bánh bao';
   list_user.forEach(elem => {
     // body...
     if(name==elem.name)
