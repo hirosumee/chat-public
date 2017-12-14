@@ -2,6 +2,7 @@
 var socketio=require('socket.io');
 var list_user=[];
 var express=require('express');
+var message=require('../models/message');
 function allocate_name(ip)
 {
   var name=ip;
@@ -23,6 +24,15 @@ module.exports=function(server)
 {
   io=socketio(server);
   io.on('connection',function(socket){
+    socket.room='comunity';
+    message.getmessage('comunity',function(err,data){
+      if(!err)
+      {
+        data.forEach(elem => {
+          socket.emit('new message',{name:elem.sender,msg:elem.content});
+        });
+      }
+    })
     console.log('IP: ',socket.handshake.address,'/ socket ID: ',socket.id);
     // cấp phát tên
     var name_index=allocate_name(socket.handshake.address);
@@ -53,8 +63,13 @@ module.exports=function(server)
     });
     // tin nhắn công cộng
     socket.on('emit msg',function(data){
-      console.log(data);
-        io.emit('new message',data);
+      var msg={};
+      msg.room=socket.room;
+      msg.sender=list_user[name_index].name;
+      msg.time=(new Date()).toUTCString();
+      msg.content=data.msg;
+      message.Create(msg);
+      io.emit('new message',data);
     });
     //
     //disconnect

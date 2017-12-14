@@ -7,13 +7,22 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var socketio=require('./socket.io/socketio');
+var mongoose=require('mongoose');
 var app = express();
 var http=require('http');
 var server =http.createServer(app);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+//
+ var key='mongodb://hirosume:cuong299@ds129166.mlab.com:29166/chatpublic';
+ mongoose.connect(key,{useMongoClient:true},function(err,db){
+   if(err){
+     console.log('Can not connect to mongodb',err);
+   }else {
+     console.log('connected to mongodb',key);
+   }
+ });
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));g
 app.use(logger('dev'));

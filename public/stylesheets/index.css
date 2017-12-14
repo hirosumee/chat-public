@@ -79,7 +79,7 @@
 .rightscreen
 {
    width: 15%;
-    height: 70%;
+    min-height: 70%;
     right: 0%;
     top: 12%;
 }
